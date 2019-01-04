@@ -11,8 +11,7 @@
         <title>Laravel</title>
 
         <!-- css -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -23,7 +22,5 @@
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>
-
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     </body>
 </html>
