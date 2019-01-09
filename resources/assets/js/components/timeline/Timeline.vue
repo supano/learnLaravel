@@ -1,8 +1,12 @@
 <template>
     <div id="timeline-wrapper">
-
-        <PostList
-            v-bind:timelineData="timelineData"></PostList>
+        <div id="create-post-wrapper">
+            <CreatePost></CreatePost>
+        </div>
+        <div id="post-list-wrapper">
+            <PostList
+                v-bind:timelineData="timelineData"></PostList>
+        </div>
     </div>
 </template>
 
@@ -10,16 +14,27 @@
     #timeline-wrapper {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    #create-post-wrapper {
+        display: flex;
+    }
+
+    #post-list-wrapper {
+        display: flex;
     }
 </style>
 
 <script>
     import PostList from './PostLists'
+    import CreatePost from './CreatePost'
 
     export default {
         name: 'timeline',
         components: {
-            PostList
+            PostList,
+            CreatePost
         },
         data() {
             return {
