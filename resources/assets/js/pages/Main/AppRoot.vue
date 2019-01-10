@@ -32,10 +32,10 @@
 </style>
 
 <script>
-    import navbar from '../components/navbar/Navbar.vue'
-    import timeline from '../components/timeline/Timeline'
-    import LeftPanel from '../components/left-panel/leftPanelWrapper'
-    import RightPanel from '../components/right-panel/RightPanelWrapper'
+    import navbar from '@/components/navbar/Navbar.vue'
+    import timeline from '@/components/timeline/Timeline'
+    import LeftPanel from '@/components/left-panel/LeftPanelWrapper'
+    import RightPanel from '@/components/right-panel/RightPanelWrapper'
 
     export default {
         components: {

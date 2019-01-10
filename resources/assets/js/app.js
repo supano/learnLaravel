@@ -10,8 +10,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 /**
  * import Components
  */
-import AppRoot from './pages/AppRoot'
-import Login from './pages/Login'
+import AppRoot from '@/pages/Main/AppRoot'
+import Login from '@/pages/Login/Login'
+import Register from '@/pages/Register/Register'
 
 
 
@@ -31,6 +32,11 @@ const router = new VueRouter({
             name: 'Login',
             component: Login
         },
+        {
+            path: '/register',
+            name: 'Register',
+            component: Register
+        },
     ],
 })
 
@@ -39,6 +45,7 @@ const app = new Vue({
     router,
     components: {
         AppRoot,
-        Login
+        Login,
+        Register
     }
 })

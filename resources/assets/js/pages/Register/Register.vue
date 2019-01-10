@@ -1,21 +1,23 @@
 <template>
-    <div id="login-wrapper">
+    <div id="register-wrapper">
         <div class="block">
             <div class="logo">
                 <h3>Social</h3>
             </div>
             <div class="form">
                 <div class="input-wrapper mb-10">
-                    <el-input v-model="input" placeholder="Email"></el-input>
+                    <el-input v-model="email" placeholder="Email"></el-input>
+                </div>
+                <div class="input-wrapper mb-10">
+                    <el-input v-model="password" type="password" placeholder="Password"></el-input>
                 </div>
                 <div class="input-wrapper">
-                    <el-input v-model="password" type="password" placeholder="Password"></el-input>
+                    <el-input v-model="passwordConfirm" type="password" placeholder="Confirm Password"></el-input>
                 </div>
             </div>
             <hr>
             <div class="button-group">
-                <el-button type="text" round>Register</el-button>
-                <el-button type="primary" round plain>Login</el-button>
+                <el-button type="primary" round plain>Register</el-button>
             </div>
         </div>
     </div>
@@ -23,7 +25,7 @@
 
 <style scoped>
 
-    #login-wrapper {
+    #register-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,7 +41,7 @@
         width: 100%;
         max-width: 500px;
         height: 100%;
-        max-height: 400px;
+        max-height: 500px;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -68,12 +70,12 @@
     }
 
     .logo {
-        height: 40%;
+        height: 30%;
         border-radius: 3px 3px 0 0;
     }
 
     .form {
-        height: 40%;
+        height: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -98,16 +100,24 @@
 
     .button-group > button {
         min-width: 150px;
-    }
-
-    .button-group > button:nth-child(1) {
-        font-weight: 400;
-    }
-
-    .button-group > button:nth-child(2) {
         background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);
         color: white;
         font-weight: 600;
         border: 0;
+        width: 100%;
+        max-width: 300px;
     }
 </style>
+
+
+<script>
+    export default {
+        data() {
+            return {
+                email: "",
+                password: "",
+                passwordConfirm: ""
+            }
+        }
+    }
+</script>
