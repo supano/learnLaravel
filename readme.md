@@ -1,6 +1,8 @@
 Made With ~~Love~~ Hand
 
 Setup  
-1. composer update  
-2. npm i  
-3. php artisan jwt:secret
+1. copy .env.example to .env  
+2. set database and email smtp infomation in .env file 
+3. composer update  
+4. npm i  
+5. php artisan jwt:secret
