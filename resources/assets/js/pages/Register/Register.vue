@@ -17,7 +17,7 @@
             </div>
             <hr>
             <div class="button-group">
-                <el-button type="primary" round plain>Register</el-button>
+                <el-button type="primary" round plain @click="register()">Register</el-button>
             </div>
         </div>
     </div>
@@ -111,12 +111,42 @@
 
 
 <script>
+    import axios from 'axios'
+
     export default {
         data() {
             return {
                 email: "",
                 password: "",
                 passwordConfirm: ""
+            }
+        },
+        watch: {
+            password: function () {
+                console.log(this.password === this.passwordConfirm)
+            },
+            passwordConfirm: function () {
+                console.log(this.password === this.passwordConfirm)
+            }
+        },
+        methods: {
+            register: function () {
+                axios({
+                    url: '/api/auth/register',
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    data: {
+                        'email': this.email,
+                        'password': this.password
+                    }
+                }).then(res => {
+                    this.$router.push('/')
+                }).catch(err => {
+                    console.log('error', err)
+                })
             }
         }
     }

@@ -12,13 +12,36 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::get('/articles', 'ArticleController@index');
+//Route::get('/article/{id}', 'ArticleController@show');
+//Route::post('/article', 'ArticleController@store');
+//Route::put('/article/{id}', 'ArticleController@update');
+//Route::delete('/article/{id}', 'ArticleController@destroy');
+
+
+Route::resources([
+    'articles' => 'ArticleController'
+]);
+
+/**
+ * Authentication
+ */
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('register', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
 });
-
-Route::get('/articles', 'ArticleController@index');
-Route::get('/articles/{id}', 'ArticleController@show');
-Route::post('/articles', 'ArticleController@store');
-Route::put('/articles/{id}', 'ArticleController@update');
-Route::delete('/articles/{id}', 'ArticleController@destroy');
