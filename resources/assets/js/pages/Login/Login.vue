@@ -6,16 +6,17 @@
             </div>
             <div class="form">
                 <div class="input-wrapper mb-10">
-                    <el-input v-model="email" placeholder="Email"></el-input>
+                    <input type="email" class="input" placeholder="Email" v-model="email">
                 </div>
                 <div class="input-wrapper">
-                    <el-input v-model="password" type="password" placeholder="Password"></el-input>
+                    <input type="password" class="input" placeholder="Password" v-model="password">
+
                 </div>
             </div>
             <hr>
             <div class="button-group">
-                <el-button type="text" round>Register</el-button>
-                <el-button type="primary" round plain>Login</el-button>
+                <button class="button is-rounded"><span>Register</span></button>
+                <button class="button is-rounded" ><span>Login</span></button>
             </div>
         </div>
     </div>
@@ -86,7 +87,7 @@
 
     .input-wrapper {
         padding: 0 50px;
-        width: 80%;
+        width: 100%;
     }
 
     .button-group {
@@ -101,14 +102,15 @@
     }
 
     .button-group > button:nth-child(1) {
-        font-weight: 400;
+        font-weight: 200;
     }
 
     .button-group > button:nth-child(2) {
         background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);
         color: white;
         font-weight: 600;
-        border: 0;
+        border: none;
+        padding: 13px 24px;
     }
 </style>
 

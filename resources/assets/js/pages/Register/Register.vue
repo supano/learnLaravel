@@ -6,18 +6,20 @@
             </div>
             <div class="form">
                 <div class="input-wrapper mb-10">
-                    <el-input v-model="email" placeholder="Email"></el-input>
+                    <input type="email" class="input" placeholder="Email" v-model="email">
                 </div>
                 <div class="input-wrapper mb-10">
-                    <el-input v-model="password" type="password" placeholder="Password"></el-input>
+                    <input type="password" class="input" placeholder="Password" v-model="password">
+
                 </div>
                 <div class="input-wrapper">
-                    <el-input v-model="passwordConfirm" type="password" placeholder="Confirm Password"></el-input>
+                    <input type="password" class="input" placeholder="Confirm Password" v-model="passwordConfirm">
+
                 </div>
             </div>
             <hr>
             <div class="button-group">
-                <el-button type="primary" round plain @click="register()">Register</el-button>
+                <button class="button is-rounded" @click="register()">Register</button>
             </div>
         </div>
     </div>
@@ -88,7 +90,7 @@
 
     .input-wrapper {
         padding: 0 50px;
-        width: 80%;
+        width: 100%;
     }
 
     .button-group {
@@ -102,7 +104,7 @@
         min-width: 150px;
         background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);
         color: white;
-        font-weight: 600;
+        font-weight: 400;
         border: 0;
         width: 100%;
         max-width: 300px;
