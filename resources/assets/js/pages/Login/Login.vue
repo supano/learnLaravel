@@ -6,17 +6,17 @@
             </div>
             <div class="form">
                 <div class="input-wrapper mb-10">
-                    <input type="email" class="input" placeholder="Email" v-model="email">
+                    <input type="email" class="input" placeholder="Email" v-model="email" id="email">
                 </div>
                 <div class="input-wrapper">
-                    <input type="password" class="input" placeholder="Password" v-model="password">
+                    <input type="password" class="input" placeholder="Password" v-model="password" id="password">
 
                 </div>
             </div>
             <hr>
             <div class="button-group">
-                <button class="button is-rounded"><span>Register</span></button>
-                <button class="button is-rounded" ><span>Login</span></button>
+                <button class="button is-rounded" @click="goToRegister()"><span>Register</span></button>
+                <button class="button is-rounded" @click="login()"><span>Login</span></button>
             </div>
         </div>
     </div>
@@ -115,11 +115,64 @@
 </style>
 
 <script>
+    import axios from 'axios'
+
     export default {
         data() {
             return {
                 email: "",
                 password: ""
+            }
+        },
+        methods: {
+            goToRegister: function (){
+                this.$router.push("/register")
+            },
+            login: function () {
+
+                if (this.isFormValid()) {
+                    axios({
+                        url: '/api/auth/login',
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        data: {
+                            'email': this.email,
+                            'password': this.password
+                        }
+                    }).then(res => {
+                        console.log("suc", res)
+                    }).catch(err => {
+                        let res = err.response
+                        console.log("err" ,res)
+                    })
+                    
+                }
+
+            },
+            isFormValid: function () {
+                let errorCount = 0;
+
+                if (document.getElementById("email").value == null || document.getElementById("email").value == "") {
+                    document.getElementById("email").classList.add("is-danger")
+                    errorCount++
+                } else {
+                    document.getElementById("email").classList.remove("is-danger")
+                }
+                if(document.getElementById("password").value == null || document.getElementById("email").value == "") {
+                    document.getElementById("password").classList.add("is-danger")
+                    errorCount++
+                } else {
+                    document.getElementById("password").classList.remove("is-danger")
+                }
+
+                if (errorCount > 0) {
+                    return false
+                } else {
+                    return true
+                }
             }
         }
     }

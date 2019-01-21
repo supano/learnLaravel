@@ -16968,6 +16968,8 @@ exports.push([module.i, "\n#login-wrapper[data-v-35403114] {\n    display: -webk
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -17085,12 +17087,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             email: "",
             password: ""
         };
+    },
+
+    methods: {
+        goToRegister: function goToRegister() {
+            this.$router.push("/register");
+        },
+        login: function login() {
+
+            if (this.isFormValid()) {
+                __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+                    url: '/api/auth/login',
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    data: {
+                        'email': this.email,
+                        'password': this.password
+                    }
+                }).then(function (res) {
+                    console.log("suc", res);
+                }).catch(function (err) {
+                    var res = err.response;
+                    console.log("err", res);
+                });
+            }
+        },
+        isFormValid: function isFormValid() {
+            var errorCount = 0;
+
+            if (document.getElementById("email").value == null || document.getElementById("email").value == "") {
+                document.getElementById("email").classList.add("is-danger");
+                errorCount++;
+            } else {
+                document.getElementById("email").classList.remove("is-danger");
+            }
+            if (document.getElementById("password").value == null || document.getElementById("email").value == "") {
+                document.getElementById("password").classList.add("is-danger");
+                errorCount++;
+            } else {
+                document.getElementById("password").classList.remove("is-danger");
+            }
+
+            if (errorCount > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 });
 
@@ -17118,7 +17172,7 @@ var render = function() {
               }
             ],
             staticClass: "input",
-            attrs: { type: "email", placeholder: "Email" },
+            attrs: { type: "email", placeholder: "Email", id: "email" },
             domProps: { value: _vm.email },
             on: {
               input: function($event) {
@@ -17142,7 +17196,11 @@ var render = function() {
               }
             ],
             staticClass: "input",
-            attrs: { type: "password", placeholder: "Password" },
+            attrs: {
+              type: "password",
+              placeholder: "Password",
+              id: "password"
+            },
             domProps: { value: _vm.password },
             on: {
               input: function($event) {
@@ -17158,7 +17216,33 @@ var render = function() {
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
-      _vm._m(1)
+      _c("div", { staticClass: "button-group" }, [
+        _c(
+          "button",
+          {
+            staticClass: "button is-rounded",
+            on: {
+              click: function($event) {
+                _vm.goToRegister()
+              }
+            }
+          },
+          [_c("span", [_vm._v("Register")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "button is-rounded",
+            on: {
+              click: function($event) {
+                _vm.login()
+              }
+            }
+          },
+          [_c("span", [_vm._v("Login")])]
+        )
+      ])
     ])
   ])
 }
@@ -17168,20 +17252,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "logo" }, [_c("h3", [_vm._v("Social")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "button-group" }, [
-      _c("button", { staticClass: "button is-rounded" }, [
-        _c("span", [_vm._v("Register")])
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "button is-rounded" }, [
-        _c("span", [_vm._v("Login")])
-      ])
-    ])
   }
 ]
 render._withStripped = true
