@@ -6,16 +6,23 @@
             </div>
             <div class="form">
                 <div class="input-wrapper mb-10">
-                    <input type="email" class="input" placeholder="Email" v-model="email">
+                    <input type="email" class="input" placeholder="Email" v-model="email" id="email">
+                    {{ emailErrorMsg }}
                 </div>
                 <div class="input-wrapper mb-10">
-                    <input type="password" class="input" placeholder="Password" v-model="password">
-
+                    <input type="password" class="input" placeholder="Password" v-model="password" id="password">
                 </div>
                 <div class="input-wrapper">
-                    <input type="password" class="input" placeholder="Confirm Password" v-model="passwordConfirm">
+                    <input type="password" class="input" placeholder="Confirm Password"
+                        v-model="passwordConfirm"
+                        v-bind:class="{ 'is-danger' : !isPasswordValid }"
+                        id="passwordConfirm">
 
                 </div>
+                <p style="color:red;min-height: 14px;margin-top: 20px">
+                    {{ errorMsg }}
+                </p>
+
             </div>
             <hr>
             <div class="button-group">
@@ -118,37 +125,93 @@
     export default {
         data() {
             return {
-                email: "",
-                password: "",
-                passwordConfirm: ""
+                email: null,
+                password: null,
+                passwordConfirm: null,
+                isPasswordValid: true,
+                hasError: true,
+                emailErrorMsg: null,
+                errorMsg: null
             }
         },
         watch: {
             password: function () {
-                console.log(this.password === this.passwordConfirm)
+                if (this.password != null && this.passwordConfirm != null) {
+                    if (this.password === this.passwordConfirm)  {
+                        this.isPasswordValid = true
+                        this.errorMsg = ""
+
+                    } else {
+                        this.isPasswordValid = false
+                        this.errorMsg = "Password and Confirm Password Not Match!"
+                    }
+                }
             },
             passwordConfirm: function () {
-                console.log(this.password === this.passwordConfirm)
+                if (this.password != null && this.passwordConfirm != null) {
+                    if (this.password === this.passwordConfirm)  {
+                        this.isPasswordValid = true
+                        this.errorMsg = ""
+
+                    } else {
+                        this.isPasswordValid = false
+                        this.errorMsg = "Password and Confirm Password Not Match!"
+
+                    }
+                }
             }
         },
         methods: {
             register: function () {
-                axios({
-                    url: '/api/auth/register',
-                    method: 'post',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    data: {
-                        'email': this.email,
-                        'password': this.password
-                    }
-                }).then(res => {
-                    this.$router.push('/')
-                }).catch(err => {
-                    console.log('error', err)
-                })
+
+                if (this.isFormValid() && this.isPasswordValid) {
+
+                    axios({
+                        url: '/api/auth/register',
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        data: {
+                            'email': this.email,
+                            'password': this.password
+                        }
+                    }).then(res => {
+                        this.$router.push('/login')
+                    }).catch(err => {
+                        let res = err.response
+                        let _errorMsg = ""
+                        console.log(res.data.errors)
+                        for (let key in res.data.errors) {
+                            _errorMsg = _errorMsg + res.data.errors[key] + "\n"
+                        }
+
+                        this.errorMsg = _errorMsg
+                    })
+                }
+
+            },
+            isFormValid: function () {
+                let errorCount = 0;
+                (this.isInputNull("email")) ? errorCount++ : null;
+                (this.isInputNull("password")) ? errorCount++ : null;
+                (this.isInputNull("passwordConfirm")) ? errorCount++ : null;
+
+                if (errorCount > 0){
+                    return false
+                } else {
+                    return true
+                }
+            },
+            isInputNull: function (id) {
+                if (document.getElementById(id).value == null || document.getElementById(id).value == "") {
+                    document.getElementById(id).classList.add("is-danger")
+                    return true
+                } else {
+                    document.getElementById(id).classList.remove("is-danger")
+                    return false
+                }
             }
         }
     }

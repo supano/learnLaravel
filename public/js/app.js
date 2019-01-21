@@ -17406,46 +17406,104 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            email: "",
-            password: "",
-            passwordConfirm: ""
+            email: null,
+            password: null,
+            passwordConfirm: null,
+            isPasswordValid: true,
+            hasError: true,
+            emailErrorMsg: null,
+            errorMsg: null
         };
     },
 
     watch: {
         password: function password() {
-            console.log(this.password === this.passwordConfirm);
+            if (this.password != null && this.passwordConfirm != null) {
+                if (this.password === this.passwordConfirm) {
+                    this.isPasswordValid = true;
+                    this.errorMsg = "";
+                } else {
+                    this.isPasswordValid = false;
+                    this.errorMsg = "Password and Confirm Password Not Match!";
+                }
+            }
         },
         passwordConfirm: function passwordConfirm() {
-            console.log(this.password === this.passwordConfirm);
+            if (this.password != null && this.passwordConfirm != null) {
+                if (this.password === this.passwordConfirm) {
+                    this.isPasswordValid = true;
+                    this.errorMsg = "";
+                } else {
+                    this.isPasswordValid = false;
+                    this.errorMsg = "Password and Confirm Password Not Match!";
+                }
+            }
         }
     },
     methods: {
         register: function register() {
             var _this = this;
 
-            __WEBPACK_IMPORTED_MODULE_0_axios___default()({
-                url: '/api/auth/register',
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                data: {
-                    'email': this.email,
-                    'password': this.password
-                }
-            }).then(function (res) {
-                _this.$router.push('/');
-            }).catch(function (err) {
-                console.log('error', err);
-            });
+            if (this.isFormValid() && this.isPasswordValid) {
+
+                __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+                    url: '/api/auth/register',
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    data: {
+                        'email': this.email,
+                        'password': this.password
+                    }
+                }).then(function (res) {
+                    _this.$router.push('/login');
+                }).catch(function (err) {
+                    var res = err.response;
+                    var _errorMsg = "";
+                    console.log(res.data.errors);
+                    for (var key in res.data.errors) {
+                        _errorMsg = _errorMsg + res.data.errors[key] + "\n";
+                    }
+
+                    _this.errorMsg = _errorMsg;
+                });
+            }
+        },
+        isFormValid: function isFormValid() {
+            var errorCount = 0;
+            this.isInputNull("email") ? errorCount++ : null;
+            this.isInputNull("password") ? errorCount++ : null;
+            this.isInputNull("passwordConfirm") ? errorCount++ : null;
+
+            if (errorCount > 0) {
+                return false;
+            } else {
+                return true;
+            }
+        },
+        isInputNull: function isInputNull(id) {
+            if (document.getElementById(id).value == null || document.getElementById(id).value == "") {
+                document.getElementById(id).classList.add("is-danger");
+                return true;
+            } else {
+                document.getElementById(id).classList.remove("is-danger");
+                return false;
+            }
         }
     }
 });
@@ -18364,7 +18422,7 @@ var render = function() {
               }
             ],
             staticClass: "input",
-            attrs: { type: "email", placeholder: "Email" },
+            attrs: { type: "email", placeholder: "Email", id: "email" },
             domProps: { value: _vm.email },
             on: {
               input: function($event) {
@@ -18374,7 +18432,10 @@ var render = function() {
                 _vm.email = $event.target.value
               }
             }
-          })
+          }),
+          _vm._v(
+            "\n                " + _vm._s(_vm.emailErrorMsg) + "\n            "
+          )
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "input-wrapper mb-10" }, [
@@ -18388,7 +18449,11 @@ var render = function() {
               }
             ],
             staticClass: "input",
-            attrs: { type: "password", placeholder: "Password" },
+            attrs: {
+              type: "password",
+              placeholder: "Password",
+              id: "password"
+            },
             domProps: { value: _vm.password },
             on: {
               input: function($event) {
@@ -18412,7 +18477,12 @@ var render = function() {
               }
             ],
             staticClass: "input",
-            attrs: { type: "password", placeholder: "Confirm Password" },
+            class: { "is-danger": !_vm.isPasswordValid },
+            attrs: {
+              type: "password",
+              placeholder: "Confirm Password",
+              id: "passwordConfirm"
+            },
             domProps: { value: _vm.passwordConfirm },
             on: {
               input: function($event) {
@@ -18423,7 +18493,23 @@ var render = function() {
               }
             }
           })
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticStyle: {
+              color: "red",
+              "min-height": "14px",
+              "margin-top": "20px"
+            }
+          },
+          [
+            _vm._v(
+              "\n                " + _vm._s(_vm.errorMsg) + "\n            "
+            )
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("hr"),

@@ -49,6 +49,10 @@ body {
     box-shadow: none;
  }
 
+.input.is-danger:focus {
+    box-shadow: none;
+}
+
 .button {
     display: inline-block;
     line-height: 1;
