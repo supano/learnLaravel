@@ -5,7 +5,7 @@
                 <h3>Social</h3>
             </div>
             <div class="form">
-                <div class="input-wrapper mb-10">
+                <div class="input-wrapper mb-10 mt-30">
                     <input type="email" class="input" placeholder="Email" v-model="email" id="email">
                     {{ emailErrorMsg }}
                 </div>
@@ -19,7 +19,7 @@
                         id="passwordConfirm">
 
                 </div>
-                <p style="color:red;min-height: 14px;margin-top: 20px">
+                <p id="error-wrapper">
                     {{ errorMsg }}
                 </p>
 
@@ -91,10 +91,6 @@
         align-items: center;
     }
 
-    .mb-10 {
-        margin-bottom: 10px;
-    }
-
     .input-wrapper {
         padding: 0 50px;
         width: 100%;
@@ -115,6 +111,13 @@
         border: 0;
         width: 100%;
         max-width: 300px;
+    }
+
+    #error-wrapper {
+        color:red;
+        min-height: 14px;
+        margin-top: 20px;
+        margin-bottom: 5px;
     }
 </style>
 

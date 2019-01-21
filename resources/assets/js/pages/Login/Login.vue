@@ -5,13 +5,16 @@
                 <h3>Social</h3>
             </div>
             <div class="form">
-                <div class="input-wrapper mb-10">
+                <div class="input-wrapper mb-10 mt-30">
                     <input type="email" class="input" placeholder="Email" v-model="email" id="email">
                 </div>
                 <div class="input-wrapper">
                     <input type="password" class="input" placeholder="Password" v-model="password" id="password">
 
                 </div>
+                <p id="error-wrapper">
+                    {{ errorMsg }}
+                </p>
             </div>
             <hr>
             <div class="button-group">
@@ -112,16 +115,25 @@
         border: none;
         padding: 13px 24px;
     }
+
+    #error-wrapper {
+        color:red;
+        min-height: 14px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
 </style>
 
 <script>
     import axios from 'axios'
 
+    const UNAUTHORIZED = 401
     export default {
         data() {
             return {
                 email: "",
-                password: ""
+                password: "",
+                errorMsg: ""
             }
         },
         methods: {
@@ -144,9 +156,18 @@
                         }
                     }).then(res => {
                         console.log("suc", res)
+                        this.errorMsg = ""
+
+                        for (let key in res.data) {
+                            localStorage.setItem(key, res.data[key])
+                        }
+
+                        this.$router.push('/')
                     }).catch(err => {
                         let res = err.response
-                        console.log("err" ,res)
+                        if (res.status == UNAUTHORIZED) {
+                            this.errorMsg = "Email or Password Not Correct"
+                        }
                     })
 
                 }

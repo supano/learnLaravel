@@ -16957,7 +16957,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n#login-wrapper[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 100vh;\n    width: 100vw;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n}\n.block[data-v-35403114] {\n\n    border-radius: 3px;\n    background-color: white;\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    max-height: 400px;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    /* bring your own prefixes */\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n}\n.logo[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 60px;\n    color: white;\n    background-color: #8ec5fc;\n    font-weight: 300;\n}\nh3[data-v-35403114]::first-letter {\n    font-weight: 800;\n}\nhr[data-v-35403114] {\n    border: .5px solid #ebebeb;\n    margin: 0;\n}\n.logo[data-v-35403114] {\n    height: 40%;\n    border-radius: 3px 3px 0 0;\n}\n.form[data-v-35403114] {\n    height: 40%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.mb-10[data-v-35403114] {\n    margin-bottom: 10px;\n}\n.input-wrapper[data-v-35403114] {\n    padding: 0 50px;\n    width: 100%;\n}\n.button-group[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: space-evenly;\n        -ms-flex-pack: space-evenly;\n            justify-content: space-evenly;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 20%;\n}\n.button-group > button[data-v-35403114] {\n    min-width: 150px;\n}\n.button-group > button[data-v-35403114]:nth-child(1) {\n    font-weight: 200;\n}\n.button-group > button[data-v-35403114]:nth-child(2) {\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n    color: white;\n    font-weight: 600;\n    border: none;\n    padding: 13px 24px;\n}\n", ""]);
+exports.push([module.i, "\n#login-wrapper[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 100vh;\n    width: 100vw;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n}\n.block[data-v-35403114] {\n\n    border-radius: 3px;\n    background-color: white;\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    max-height: 400px;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    /* bring your own prefixes */\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n}\n.logo[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 60px;\n    color: white;\n    background-color: #8ec5fc;\n    font-weight: 300;\n}\nh3[data-v-35403114]::first-letter {\n    font-weight: 800;\n}\nhr[data-v-35403114] {\n    border: .5px solid #ebebeb;\n    margin: 0;\n}\n.logo[data-v-35403114] {\n    height: 40%;\n    border-radius: 3px 3px 0 0;\n}\n.form[data-v-35403114] {\n    height: 40%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.mb-10[data-v-35403114] {\n    margin-bottom: 10px;\n}\n.input-wrapper[data-v-35403114] {\n    padding: 0 50px;\n    width: 100%;\n}\n.button-group[data-v-35403114] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: space-evenly;\n        -ms-flex-pack: space-evenly;\n            justify-content: space-evenly;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 20%;\n}\n.button-group > button[data-v-35403114] {\n    min-width: 150px;\n}\n.button-group > button[data-v-35403114]:nth-child(1) {\n    font-weight: 200;\n}\n.button-group > button[data-v-35403114]:nth-child(2) {\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n    color: white;\n    font-weight: 600;\n    border: none;\n    padding: 13px 24px;\n}\n#error-wrapper[data-v-35403114] {\n    color:red;\n    min-height: 14px;\n    margin-top: 20px;\n    margin-bottom: 5px;\n}\n", ""]);
 
 // exports
 
@@ -17086,14 +17086,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
+var UNAUTHORIZED = 401;
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             email: "",
-            password: ""
+            password: "",
+            errorMsg: ""
         };
     },
 
@@ -17102,6 +17114,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$router.push("/register");
         },
         login: function login() {
+            var _this = this;
 
             if (this.isFormValid()) {
                 __WEBPACK_IMPORTED_MODULE_0_axios___default()({
@@ -17117,9 +17130,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 }).then(function (res) {
                     console.log("suc", res);
+                    _this.errorMsg = "";
+
+                    for (var key in res.data) {
+                        localStorage.setItem(key, res.data[key]);
+                    }
+
+                    _this.$router.push('/');
                 }).catch(function (err) {
                     var res = err.response;
-                    console.log("err", res);
+                    if (res.status == UNAUTHORIZED) {
+                        _this.errorMsg = "Email or Password Not Correct";
+                    }
                 });
             }
         },
@@ -17161,7 +17183,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "form" }, [
-        _c("div", { staticClass: "input-wrapper mb-10" }, [
+        _c("div", { staticClass: "input-wrapper mb-10 mt-30" }, [
           _c("input", {
             directives: [
               {
@@ -17211,6 +17233,10 @@ var render = function() {
               }
             }
           })
+        ]),
+        _vm._v(" "),
+        _c("p", { attrs: { id: "error-wrapper" } }, [
+          _vm._v("\n                " + _vm._s(_vm.errorMsg) + "\n            ")
         ])
       ]),
       _vm._v(" "),
@@ -17349,7 +17375,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n#register-wrapper[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 100vh;\n    width: 100vw;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n}\n.block[data-v-0e4af4c2] {\n\n    border-radius: 3px;\n    background-color: white;\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    max-height: 500px;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    /* bring your own prefixes */\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n}\n.logo[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 60px;\n    color: white;\n    background-color: #8ec5fc;\n    font-weight: 300;\n}\nh3[data-v-0e4af4c2]::first-letter {\n    font-weight: 800;\n}\nhr[data-v-0e4af4c2] {\n    border: .5px solid #ebebeb;\n    margin: 0;\n}\n.logo[data-v-0e4af4c2] {\n    height: 30%;\n    border-radius: 3px 3px 0 0;\n}\n.form[data-v-0e4af4c2] {\n    height: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.mb-10[data-v-0e4af4c2] {\n    margin-bottom: 10px;\n}\n.input-wrapper[data-v-0e4af4c2] {\n    padding: 0 50px;\n    width: 100%;\n}\n.button-group[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: space-evenly;\n        -ms-flex-pack: space-evenly;\n            justify-content: space-evenly;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 20%;\n}\n.button-group > button[data-v-0e4af4c2] {\n    min-width: 150px;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n    color: white;\n    font-weight: 400;\n    border: 0;\n    width: 100%;\n    max-width: 300px;\n}\n", ""]);
+exports.push([module.i, "\n#register-wrapper[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 100vh;\n    width: 100vw;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n}\n.block[data-v-0e4af4c2] {\n\n    border-radius: 3px;\n    background-color: white;\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    max-height: 500px;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    /* bring your own prefixes */\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n    -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);\n}\n.logo[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-size: 60px;\n    color: white;\n    background-color: #8ec5fc;\n    font-weight: 300;\n}\nh3[data-v-0e4af4c2]::first-letter {\n    font-weight: 800;\n}\nhr[data-v-0e4af4c2] {\n    border: .5px solid #ebebeb;\n    margin: 0;\n}\n.logo[data-v-0e4af4c2] {\n    height: 30%;\n    border-radius: 3px 3px 0 0;\n}\n.form[data-v-0e4af4c2] {\n    height: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.input-wrapper[data-v-0e4af4c2] {\n    padding: 0 50px;\n    width: 100%;\n}\n.button-group[data-v-0e4af4c2] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: space-evenly;\n        -ms-flex-pack: space-evenly;\n            justify-content: space-evenly;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    height: 20%;\n}\n.button-group > button[data-v-0e4af4c2] {\n    min-width: 150px;\n    background-image: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%);\n    color: white;\n    font-weight: 400;\n    border: 0;\n    width: 100%;\n    max-width: 300px;\n}\n#error-wrapper[data-v-0e4af4c2] {\n    color:red;\n    min-height: 14px;\n    margin-top: 20px;\n    margin-bottom: 5px;\n}\n", ""]);
 
 // exports
 
@@ -17362,6 +17388,9 @@ exports.push([module.i, "\n#register-wrapper[data-v-0e4af4c2] {\n    display: -w
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
 //
 //
 //
@@ -18481,7 +18510,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "form" }, [
-        _c("div", { staticClass: "input-wrapper mb-10" }, [
+        _c("div", { staticClass: "input-wrapper mb-10 mt-30" }, [
           _c("input", {
             directives: [
               {
@@ -18565,21 +18594,9 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticStyle: {
-              color: "red",
-              "min-height": "14px",
-              "margin-top": "20px"
-            }
-          },
-          [
-            _vm._v(
-              "\n                " + _vm._s(_vm.errorMsg) + "\n            "
-            )
-          ]
-        )
+        _c("p", { attrs: { id: "error-wrapper" } }, [
+          _vm._v("\n                " + _vm._s(_vm.errorMsg) + "\n            ")
+        ])
       ]),
       _vm._v(" "),
       _c("hr"),

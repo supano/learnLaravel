@@ -94,3 +94,11 @@ body {
     -moz-box-shadow: none;
     box-shadow: none;
 }
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
