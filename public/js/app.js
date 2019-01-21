@@ -15578,24 +15578,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -16826,40 +16808,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "app-root" } },
-    [
-      _c("navbar"),
-      _vm._v(" "),
-      _c(
-        "el-container",
-        { attrs: { id: "content-wrapper" } },
-        [
-          _c(
-            "el-main",
-            [
-              _c(
-                "el-row",
-                { attrs: { gutter: 10, type: "flex", justify: "center" } },
-                [
-                  _c("el-col", { attrs: { span: 3 } }, [_c("LeftPanel")], 1),
-                  _vm._v(" "),
-                  _c("el-col", { attrs: { span: 9 } }, [_c("timeline")], 1),
-                  _vm._v(" "),
-                  _c("el-col", { attrs: { span: 3 } }, [_c("RightPanel")], 1)
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
+  return _c("h2", [_vm._v("Welcome")])
 }
 var staticRenderFns = []
 render._withStripped = true

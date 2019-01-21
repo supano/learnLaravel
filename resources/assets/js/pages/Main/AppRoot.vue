@@ -1,23 +1,5 @@
 <template>
-    <div id="app-root">
-        <navbar></navbar>
-        <el-container id="content-wrapper">
-            <el-main>
-                <el-row :gutter="10" type="flex" class="" justify="center">
-                    <el-col :span="3">
-                        <LeftPanel></LeftPanel>
-                    </el-col>
-                    <el-col :span="9">
-                        <timeline></timeline>
-                    </el-col>
-                    <el-col :span="3">
-                        <RightPanel></RightPanel>
-                    </el-col>
-                </el-row>
-            </el-main>
-        </el-container>
-
-    </div>
+    <h2>Welcome</h2>
 </template>
 
 <style>
