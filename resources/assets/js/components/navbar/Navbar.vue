@@ -1,52 +1,57 @@
 <template>
-    <nav>
-        <el-menu class="el-menu-demo" mode="horizontal">
-            <el-row type="flex" class="row-bg" justify="center">
-                <el-col :span="3">
-                    <div class="nav-left">logo</div>
-                </el-col>
-                <el-col :span="9">
-                    <div class="nav-middle">
-                        <el-input
-                                placeholder="Search"
-                                v-model="searchString">
-                            <i slot="suffix" class="el-input__icon el-icon-search"></i>
-                        </el-input>
+    <nav class="navbar is-info">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                Social
+            </a>
+            <div class="navbar-burger burger" data-target="navMenuColorinfo-example">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="navMenuColorinfo-example" class="navbar-menu">
+            <div class="navbar-start">
+
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+
+                    </a>
+
+                    <div class="navbar-dropdown is-right">
+                        <a class="navbar-item">
+                            Settings
+                        </a>
+                        <a class="navbar-item">
+                            About
+                        </a>
+
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" @click="logout()">
+                            Logout
+                        </a>
                     </div>
-                </el-col>
-                <el-col :span="3">
-                    <div class="nav-right">
-                       menu
-                    </div>
-                </el-col>
-            </el-row>
-        </el-menu>
+                </div>
+            </div>
+        </div>
     </nav>
 </template>
 
 <style scoped>
-    .el-menu-demo {
-        padding: 5px 15px;
+    .navbar {
+        -webkit-box-shadow: 0px 5px 5px 0px rgba(194,194,194,0.57);
+        -moz-box-shadow: 0px 5px 5px 0px rgba(194,194,194,0.57);
+        box-shadow: 0px 5px 5px 0px rgba(194,194,194,0.57);
     }
 
-    .nav-left {
-        display: flex;
-        margin:auto;
-        height: 100%;
-    }
-
-    .nav-middle {
-        display: flex;
-        margin:auto;
-        width: 80%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-right {
-        display: flex;
-        margin:auto;
-        height: 100%;
+    .navbar-brand > .navbar-item {
+        font-size: 30px;
+        padding: 0 10px;
     }
 </style>
 
@@ -62,6 +67,13 @@
         methods: {
             search: function () {
                 console.log(this.searchString)
+            },
+            logout: function () {
+                localStorage.removeItem('access_token')
+                localStorage.removeItem('expires_in', '')
+                localStorage.removeItem('token_type', '')
+
+                this.$router.push('/login')
             }
         },
         watch: {
