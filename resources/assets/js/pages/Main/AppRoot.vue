@@ -2,9 +2,9 @@
     <div>
         <navbar></navbar>
         <div class="container">
-            <newpost></newpost>
+            <newpost @reloadPost="onReloadPost"></newpost>
             <div v-for="post in posts">
-                <h2>{{post.title}}</h2>
+                <postelement v-bind:post="post.post" v-bind:love="post.love"></postelement>
             </div>
         </div>
 
@@ -29,14 +29,16 @@
 </style>
 
 <script>
-    import navbar from '@/components/navbar/Navbar.vue'
+    import navbar from '@/components/navbar/Navbar'
     import newpost from './Components/NewPost'
+    import postelement from './Components/PostElement'
     import axios from 'axios'
 
     export default {
         components: {
             navbar,
-            newpost
+            newpost,
+            postelement
         },
         data() {
             return {
@@ -46,7 +48,7 @@
         methods: {
             getPost: function() {
                 axios({
-                    url: '/api/articles',
+                    url: '/api/posts',
                     method: 'get',
 
                 }).then(res => {
@@ -64,6 +66,11 @@
                     resolve(true)
                 }.bind(this))
 
+            },
+            onReloadPost: function (value) {
+                if (value) {
+                    this.getPost()
+                }
             }
         },
         created() {

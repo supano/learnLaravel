@@ -28,6 +28,10 @@ Route::resources([
     'articles' => 'ArticleController'
 ]);
 
+Route::resources([
+    'posts' => 'PostController'
+]);
+
 /**
  * Authentication
  */
