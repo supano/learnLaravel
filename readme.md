@@ -1,4 +1,4 @@
-Made With ~~Love~~ Hand
+Made With ~~Love~~ Keyboard
 
 Setup  
 1. copy .env.example to .env  
